@@ -229,6 +229,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/06/smartschool%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SunshineZerg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/03/06/smartschool%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url">smartschool问题总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-06T00:54:31+08:00">
+                2022-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>本篇对上学期开发中出现的问题进行总结</p>
+<h4 id="1-重构时注意字段数据是否与接口一一对应"><a href="#1-重构时注意字段数据是否与接口一一对应" class="headerlink" title="1.重构时注意字段数据是否与接口一一对应"></a>1.重构时注意字段数据是否与接口一一对应</h4><p><img src="D:\myblog\img\字符段对齐.png"></p>
+<p>如图所示，当返回status的值非0或者1时，应该写一个错误返回。</p>
+<h4 id="2-提交问题"><a href="#2-提交问题" class="headerlink" title="2.提交问题"></a>2.提交问题</h4><p>在接口需要传递参数为对象时，最好创建一个新的对象把数据传入其中，尽量不要直接使用data进行传参。</p>
+<h4 id="3-输入兜底"><a href="#3-输入兜底" class="headerlink" title="3.输入兜底"></a>3.输入兜底</h4><p><img src="D:\myblog\img\兜底返回.png"></p>
+<p>如图，记得写输入兜底，比如性别输入错误，填入一个非男或者非女的字符串，参数里就没有正确的sex字段提交了，所以加入检查并且写一个兜底返回。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/04/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -659,7 +784,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
