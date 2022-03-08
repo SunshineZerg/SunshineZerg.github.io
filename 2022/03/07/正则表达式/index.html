@@ -99,7 +99,7 @@
     root: '',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -359,7 +359,7 @@
 </ul>
 <h6 id="正则表达式的符号"><a href="#正则表达式的符号" class="headerlink" title="正则表达式的符号"></a>正则表达式的符号</h6><p>可以直接参考百度百科，里面介绍的很清楚[百度百科](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1700215">正则表达式_百度百科 (baidu.com)</a>)</p>
 <h3 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h3><blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]&#123;8,16&#125;$</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(?=.*[A-Za-z])(?=.*\d)<span class="selector-attr">[A-Za-z\d]</span>&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$</span><br></pre></td></tr></table></figure>
 
 <p>&#x2F;&#x2F;8-16个字符，至少一个大写字母，一个小写字母和一个数字，不包括特殊字符</p>
 </blockquote>

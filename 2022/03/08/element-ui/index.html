@@ -79,13 +79,15 @@
 
 
 
+<meta name="description" content="Layout布局通过row和col组件，并通过col组件的span属性自由组合全局，一个中的所有的span值总合为24 row组件通过gutter属性指定每一栏之间的间隔 col组件的offset属性可以指定分栏偏移的栏数 可启用flex布局 响应式布局 预设了五个响应尺寸 xs、sm、md、lg、xl 基于断点的隐藏类 可加在任何DOM元素或自定义组件上 123hidden-[]-only 当视">
 <meta property="og:type" content="article">
 <meta property="og:title" content="element-ui">
 <meta property="og:url" content="http://example.com/2022/03/08/element-ui/index.html">
 <meta property="og:site_name" content="SunshineZerg">
+<meta property="og:description" content="Layout布局通过row和col组件，并通过col组件的span属性自由组合全局，一个中的所有的span值总合为24 row组件通过gutter属性指定每一栏之间的间隔 col组件的offset属性可以指定分栏偏移的栏数 可启用flex布局 响应式布局 预设了五个响应尺寸 xs、sm、md、lg、xl 基于断点的隐藏类 可加在任何DOM元素或自定义组件上 123hidden-[]-only 当视">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-08T08:29:51.000Z">
-<meta property="article:modified_time" content="2022-03-08T08:53:43.954Z">
+<meta property="article:modified_time" content="2022-03-08T17:18:40.456Z">
 <meta property="article:author" content="wyk">
 <meta name="twitter:card" content="summary">
 
@@ -97,7 +99,7 @@
     root: '',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -317,7 +319,44 @@
       
 
       
-        
+        <h4 id="Layout布局"><a href="#Layout布局" class="headerlink" title="Layout布局"></a>Layout布局</h4><p>通过row和col组件，并通过col组件的span属性自由组合全局，一个<el-row>中的所有<el-col>的span值总合为24</p>
+<p>row组件通过gutter属性指定每一栏之间的间隔</p>
+<p>col组件的offset属性可以指定分栏偏移的栏数</p>
+<p><el-row type="flex">可启用flex布局</p>
+<p>响应式布局</p>
+<p>预设了五个响应尺寸 xs、sm、md、lg、xl</p>
+<p>基于断点的隐藏类 可加在任何DOM元素或自定义组件上</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hidden-<span class="selector-attr">[]</span>-only 当视口在<span class="selector-attr">[]</span>尺寸时隐藏</span><br><span class="line">hidden-<span class="selector-attr">[]</span>-and-down 在<span class="selector-attr">[]</span>及以下时</span><br><span class="line">             -up   在<span class="selector-attr">[]</span>及以上时</span><br></pre></td></tr></table></figure>
+
+<h4 id="Container布局容器"><a href="#Container布局容器" class="headerlink" title="Container布局容器"></a>Container布局容器</h4><p>用于布局的容器组件，方便快速搭建页面的基本结构</p>
+<p><el-container>：外层容器</p>
+<p>有<el-header>或<el-footer>时，全部子元素会垂直上下排列，否则会水平左右排列</p>
+<p><el-header>：顶栏容器</p>
+<p><el-aside>：侧边栏容器</p>
+<p><el-main>：主要区域容器</p>
+<p><el-footer>：底栏容器</p>
+<p>el-icon-iconName提供了一套常用的图标集合</p>
+<h4 id="button按钮"><a href="#button按钮" class="headerlink" title="button按钮"></a>button按钮</h4><p>type plain round circle</p>
+<p>size </p>
+<ul>
+<li>small</li>
+<li>medium</li>
+<li>mini</li>
+</ul>
+<h4 id="Radio单选框"><a href="#Radio单选框" class="headerlink" title="Radio单选框"></a>Radio单选框</h4><p>使用时设置v-model绑定变量；变量为相应Radio&#x2F;able属性值</p>
+<p>text-color 按钮形式的Radio激活时的文本颜色</p>
+<p>fill 按钮形式的Radio激活时的填充色和边框色</p>
+<h4 id="checkbox多选框"><a href="#checkbox多选框" class="headerlink" title="checkbox多选框"></a>checkbox多选框</h4><p>checkbox-group可将多个checkbox管理为一组，在group中使用v-model绑定Array类型的变量，其中checkbox的lable是checkbox的对应值，label与数组中的元素相对应，如果存在指定的值则为选中状态，否则为不选中状态</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">el-checkbox-group</span> <span class="attr">v-model</span>=<span class="string">&quot;checklist&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">el-checkbox</span> <span class="attr">label</span> =<span class="string">&quot;A&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-checkbox</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">el-checkbox</span> <span class="attr">label</span> =<span class="string">&quot;B&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">el-checkbox</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">	<span class="tag">&lt;/<span class="name">el-checkbox-group</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">		<span class="title function_">data</span>(<span class="params"></span>)&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="keyword">return</span>&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">                <span class="attr">checkList</span>:[<span class="string">&quot;A&quot;</span>]</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            &#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>indeterminate书型盒表示checkbox的不确定状态，一般用于实现全选的效果，min和max属性能够限制可以被勾选的项目的数量</p>
+<h4 id="Input输入框"><a href="#Input输入框" class="headerlink" title="Input输入框"></a>Input输入框</h4><p>clearable属性可以得到一个可清空的输入框</p>
+<h5 id="带icon的输入框"><a href="#带icon的输入框" class="headerlink" title="带icon的输入框"></a>带icon的输入框</h5><p>prefix-icon与suffix-icon分别在input组件的首部和尾部增加显示图标，也可以通过slot来放置图标</p>
+<h4 id="文本域"><a href="#文本域" class="headerlink" title="文本域"></a>文本域</h4><p>将type指定为textarea可输入多行文本信息                    </p>
+<p>autosize使文本域高度根据文本内容自动调整</p>
+<p>可slot前置或后置元素</p>
+<p>autocomplete可带输入建议的输入框组件</p>
+
       
     </div>
     
@@ -401,8 +440,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -444,6 +492,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Layout%E5%B8%83%E5%B1%80"><span class="nav-number">1.</span> <span class="nav-text">Layout布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Container%E5%B8%83%E5%B1%80%E5%AE%B9%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">Container布局容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#button%E6%8C%89%E9%92%AE"><span class="nav-number">3.</span> <span class="nav-text">button按钮</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Radio%E5%8D%95%E9%80%89%E6%A1%86"><span class="nav-number">4.</span> <span class="nav-text">Radio单选框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#checkbox%E5%A4%9A%E9%80%89%E6%A1%86"><span class="nav-number">5.</span> <span class="nav-text">checkbox多选框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input%E8%BE%93%E5%85%A5%E6%A1%86"><span class="nav-number">6.</span> <span class="nav-text">Input输入框</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B8%A6icon%E7%9A%84%E8%BE%93%E5%85%A5%E6%A1%86"><span class="nav-number">6.1.</span> <span class="nav-text">带icon的输入框</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E6%9C%AC%E5%9F%9F"><span class="nav-number">7.</span> <span class="nav-text">文本域</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
