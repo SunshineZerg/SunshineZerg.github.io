@@ -650,6 +650,13 @@
 <h4 id="4-async-x2F-await"><a href="#4-async-x2F-await" class="headerlink" title="4.async&#x2F;await"></a>4.async&#x2F;await</h4><p>async函数返回的是一个promise对象</p>
 <p>await等待一个async函数的返回值也可以等任何表达式的结果</p>
 <p>如果等到的不是Promise对象，则await的结果就是他等到的东西。如果是Promise对象，await将等对象resolve，将这个值作为结果。</p>
+<h4 id="5-this"><a href="#5-this" class="headerlink" title="5.this"></a>5.this</h4><p>每个新函数根据他是被如何调用的来定义这个函数的this值</p>
+<ul>
+<li>如果该函数是一个构造函数，this指针指向一个新的对象</li>
+<li>在严格模式下的函数调用下，this指向undefined</li>
+<li>如果函数是一个对象的方法，则它的this指向这个对象</li>
+</ul>
+<p>箭头函数不会创建自己的this，它只会从自己的作用域链的上一层继承this</p>
 
           
         
