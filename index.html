@@ -249,6 +249,275 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/08/4.8%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SunshineZerg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/04/08/4.8%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/" itemprop="url">js</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-08T12:31:20+08:00">
+                2022-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="K次串联后的最大子数组之和"><a href="#K次串联后的最大子数组之和" class="headerlink" title="K次串联后的最大子数组之和"></a>K次串联后的最大子数组之和</h4><p>给定一个整数数组 arr 和一个整数 k ，通过重复 k 次来修改数组。</p>
+<p>例如，如果 arr &#x3D; [1, 2] ， k &#x3D; 3 ，那么修改后的数组将是 [1, 2, 1, 2, 1, 2] 。</p>
+<p>返回修改后的数组中的最大的子数组之和。注意，子数组长度可以是 0，在这种情况下它的总和也是 0。</p>
+<p>由于 结果可能会很大，需要返回的 109 + 7 的 模 。</p>
+<p>示例 1：</p>
+<p>输入：arr &#x3D; [1,2], k &#x3D; 3<br>输出：9<br>示例 2：</p>
+<p>输入：arr &#x3D; [1,-2,1], k &#x3D; 5<br>输出：2<br>示例 3：</p>
+<p>输入：arr &#x3D; [-1,-2], k &#x3D; 7<br>输出：0</p>
+<p>提示：</p>
+<p>1 &lt;&#x3D; arr.length &lt;&#x3D; 105<br>1 &lt;&#x3D; k &lt;&#x3D; 105<br>-104 &lt;&#x3D; arr[i] &lt;&#x3D; 104</p>
+<ul>
+<li>k&#x3D;0   返回0</li>
+<li>k&#x3D;1   题目转化为求数组最大子串和</li>
+<li>k&gt;&#x3D;2     分数组和大于0小于0两种情况</li>
+</ul>
+<p>如果大于0</p>
+<p>要取到最大值相当于第一个取最大后缀和最后一个取最大前缀和，中间每个数组都贡献一个sum</p>
+<p>此时</p>
+<blockquote>
+<p>max &#x3D; postmax+sum*(k-2)+premax;</p>
+</blockquote>
+<p>如果小于0</p>
+<p>最大值是0，单个数组的最大子串和，最大前缀和和最大后缀和的和三者的最大值</p>
+<p>此时</p>
+<blockquote>
+<p>max &#x3D; Math.max(postmax+premax,maxmax,0);</p>
+</blockquote>
+<p>代码实现如下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意取模</span></span><br><span class="line"><span class="keyword">var</span> modulo = (<span class="number">10</span> ** <span class="number">9</span>) + <span class="number">7</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">arr</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">k</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> kConcatenationMaxSum = <span class="keyword">function</span>(<span class="params">arr, k</span>) &#123;</span><br><span class="line">    <span class="comment">//存储数组的和</span></span><br><span class="line">    <span class="keyword">var</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)</span><br><span class="line">    sum+=arr[i];</span><br><span class="line">    <span class="comment">//前缀和及其最大值</span></span><br><span class="line">    <span class="keyword">var</span> prehe = [];</span><br><span class="line">    prehe[<span class="number">0</span>] = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;arr.<span class="property">length</span>;i++)</span><br><span class="line">    prehe[i]=arr[i]+prehe[i-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">var</span> premax = prehe[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt; arr.<span class="property">length</span>;i++)</span><br><span class="line">    premax = <span class="title class_">Math</span>.<span class="title function_">max</span>(premax,prehe[i]);</span><br><span class="line">    <span class="comment">//后缀和及其最大值</span></span><br><span class="line">    <span class="keyword">var</span> posthe = [];</span><br><span class="line">    posthe[arr.<span class="property">length</span>-<span class="number">1</span>] = arr[arr.<span class="property">length</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = arr.<span class="property">length</span>-<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">    posthe[i]= arr[i]+posthe[i+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">var</span> postmax = posthe[arr.<span class="property">length</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = arr.<span class="property">length</span>-<span class="number">2</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">    postmax = <span class="title class_">Math</span>.<span class="title function_">max</span>(postmax,posthe[i]);</span><br><span class="line">    <span class="comment">//单个子串的最大值</span></span><br><span class="line">    <span class="keyword">var</span> zimax = [];</span><br><span class="line">    zimax[<span class="number">0</span>] = <span class="title class_">Math</span>.<span class="title function_">max</span>(prehe[<span class="number">0</span>],<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i &lt; arr.<span class="property">length</span>;i++)</span><br><span class="line">    zimax[i] = <span class="title class_">Math</span>.<span class="title function_">max</span>(<span class="number">0</span>,zimax[i-<span class="number">1</span>]+arr[i]);</span><br><span class="line">    <span class="keyword">var</span> maxmax = zimax[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>;i&lt;arr.<span class="property">length</span>;i++)</span><br><span class="line">    maxmax = <span class="title class_">Math</span>.<span class="title function_">max</span>(maxmax,zimax[i]);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//调试用</span></span><br><span class="line">	<span class="comment">//console.log(zimax);    </span></span><br><span class="line">    <span class="comment">//console.log(posthe);</span></span><br><span class="line">    <span class="comment">//console.log(prehe);</span></span><br><span class="line">    <span class="comment">//console.log(postmax);</span></span><br><span class="line">    <span class="comment">//console.log(premax);</span></span><br><span class="line">    <span class="comment">//console.log(maxmax);</span></span><br><span class="line">    <span class="keyword">if</span>(k == <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(k == <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">max</span>(postmax,premax,<span class="number">0</span>) % modulo;</span><br><span class="line">    <span class="keyword">if</span>(k &gt;= <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span>(sum &gt;= <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">max</span>(postmax+sum*(k-<span class="number">2</span>)+premax) % modulo;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">max</span>(postmax+premax,maxmax,<span class="number">0</span>) % modulo;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/08/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SunshineZerg">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/04/08/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95%E6%80%BB%E7%BB%93/" itemprop="url">第一次面试总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-08T12:31:01+08:00">
+                2022-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>操作系统 什么是死锁<br>项目中如何管理权限<br>js中的基本变量有哪些<br>css盒子模型<br>promise  ajax<br>session tocken cookie区别<br>为什么vue中变量写在data里<br>-不写在data里写在created里有什么区别<br>如何理解vue中的watch<br>算法 给定字符串求可能组成的所有ip地址</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/21/18-21%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1474,265 +1743,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/03/%E8%85%BE%E8%AE%AF%E4%BA%91%E9%AA%8C%E8%AF%81%E7%B3%BB%E7%BB%9F%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SunshineZerg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/03/03/%E8%85%BE%E8%AE%AF%E4%BA%91%E9%AA%8C%E8%AF%81%E7%B3%BB%E7%BB%9F%E9%97%AE%E9%A2%98/" itemprop="url">腾讯云验证系统问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-03T11:40:34+08:00">
-                2022-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在写用户换绑手机号功能时用到了腾讯云的验证系统，<br>在按 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/1110/36841">https://cloud.tencent.com/document/product/1110/36841</a> 文档接入验证码后，点击触发按钮没有反应。<br>调试发现应该是 <code>&lt;script src=&quot;https://ssl.captcha.qq.com/TCaptcha.js&quot;&gt;&lt;/script&gt;</code>  这一行代码引入文件失败，导致触发事件未被正确绑定。<br>src是es5写法，vue使用es6，网上找到解决方法为在export default中加入以下代码，直接使用DOM插入js文件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">mounted</span>(<span class="params"></span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;script&#x27;</span>);</span><br><span class="line">     script.<span class="property">type</span> = <span class="string">&#x27;text/javascript&#x27;</span>;</span><br><span class="line">     script.<span class="property">src</span> = <span class="string">&#x27;https://ssl.captcha.qq.com/TCaptcha.js&#x27;</span>;</span><br><span class="line">     <span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(script);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>另外还有使用render的另一种解决方法，但vue打包时报错：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">   <span class="attr">components</span>: &#123;</span><br><span class="line">       <span class="string">&#x27;xxx-js&#x27;</span>: &#123;</span><br><span class="line">           <span class="title function_">render</span>(<span class="params">createElement</span>) &#123;</span><br><span class="line">               <span class="keyword">return</span> <span class="title function_">createElement</span>(</span><br><span class="line">                   <span class="string">&#x27;script&#x27;</span>,</span><br><span class="line">                   &#123;</span><br><span class="line">                       <span class="attr">attrs</span>: &#123;</span><br><span class="line">                           <span class="attr">type</span>: <span class="string">&#x27;text/javascript&#x27;</span>,</span><br><span class="line">                           <span class="attr">src</span>: <span class="string">&#x27;你的js文件地址&#x27;</span>,</span><br><span class="line">                       &#125;,</span><br><span class="line">                   &#125;,</span><br><span class="line">               );</span><br><span class="line">           &#125;,</span><br><span class="line">       &#125;,</span><br><span class="line">   &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>引用时以<code>&lt;xxx-js&gt;&lt;/xxx-js&gt;</code>的形式调用</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/03/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SunshineZerg">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2022/03/03/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-03T11:34:35+08:00">
-                2022-03-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+  </nav>
+
 
 
           </div>
@@ -1776,7 +1793,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
