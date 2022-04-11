@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="​        之前项目中遇到检查密码和手机号格式的正则表达式，都是使用网上现成的，刷题时发现正则还有许多用法  正则表达式的作用 对于给定的字符串可以判断是否符合正则表达式的逻辑（匹配） 从字符串中获取我们想要的特定部分  两种引擎对于同一字符串this is yuekun’s blog,正则表达式为&#x2F;yu(dkun|ekun|dkum)&#x2F;  NFA工作方式  ​">
+<meta name="description" content="给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。 字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。（例如，”ACE” 是 “ABCDE” 的一个子序列，而 “AEC” 不是） 题目数据保证答案符合 32 位带符号整数范围。 示例 1： 输入：s &#x3D; “rabbbit”, t &#x3D; “rabbit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
-<meta property="og:url" content="http://example.com/2022/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:title" content="子序列的个数">
+<meta property="og:url" content="http://example.com/2022/04/10/%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AA%E6%95%B0/index.html">
 <meta property="og:site_name" content="SunshineZerg">
-<meta property="og:description" content="​        之前项目中遇到检查密码和手机号格式的正则表达式，都是使用网上现成的，刷题时发现正则还有许多用法  正则表达式的作用 对于给定的字符串可以判断是否符合正则表达式的逻辑（匹配） 从字符串中获取我们想要的特定部分  两种引擎对于同一字符串this is yuekun’s blog,正则表达式为&#x2F;yu(dkun|ekun|dkum)&#x2F;  NFA工作方式  ​">
+<meta property="og:description" content="给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。 字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。（例如，”ACE” 是 “ABCDE” 的一个子序列，而 “AEC” 不是） 题目数据保证答案符合 32 位带符号整数范围。 示例 1： 输入：s &#x3D; “rabbbit”, t &#x3D; “rabbit">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-03-07T06:21:31.000Z">
-<meta property="article:modified_time" content="2022-03-08T08:28:11.108Z">
+<meta property="article:published_time" content="2022-04-10T02:33:19.000Z">
+<meta property="article:modified_time" content="2022-04-10T02:46:53.223Z">
 <meta property="article:author" content="wyk">
 <meta name="twitter:card" content="summary">
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2022/03/07/正则表达式/"/>
+  <link rel="canonical" href="http://example.com/2022/04/10/子序列的个数/"/>
 
 
 
 
 
-  <title>正则表达式 | SunshineZerg</title>
+  <title>子序列的个数 | SunshineZerg</title>
   
 
 
@@ -252,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/07/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/10/%E5%AD%90%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%AA%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -269,7 +269,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">正则表达式</h1>
+          <h1 class="post-title" itemprop="name headline">子序列的个数</h1>
         
 
         <div class="post-meta">
@@ -281,8 +281,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-07T14:21:31+08:00">
-                2022-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-10T10:33:19+08:00">
+                2022-04-10
               </time>
             
 
@@ -319,52 +319,16 @@
       
 
       
-        <blockquote>
-<p>​        之前项目中遇到检查密码和手机号格式的正则表达式，都是使用网上现成的，刷题时发现正则还有许多用法</p>
-</blockquote>
-<h4 id="正则表达式的作用"><a href="#正则表达式的作用" class="headerlink" title="正则表达式的作用"></a>正则表达式的作用</h4><ul>
-<li>对于给定的字符串可以判断是否符合正则表达式的逻辑（匹配）</li>
-<li>从字符串中获取我们想要的特定部分</li>
-</ul>
-<h4 id="两种引擎"><a href="#两种引擎" class="headerlink" title="两种引擎"></a>两种引擎</h4><p>对于同一字符串this is yuekun’s blog,正则表达式为&#x2F;yu(dkun|ekun|dkum)&#x2F;</p>
-<ul>
-<li>NFA工作方式</li>
-</ul>
-<p>​       首先在字符串中查找y然后匹配其后是否为u，如果是u则继续，查找其后是否为d，发现不是然后匹配其后是否为e（此时淘汰dkun选择支）。然后继续看其后是否依次为k，u，n，是n则匹配成功，不是n则匹配是否是m，这里可以看出NFA的工作方式是以正则表达式为标准，反复测试字符串，这样的测试可能测试了很多次。</p>
-<ul>
-<li>DFA工作方式</li>
-</ul>
-<p>​       DFA会从this的首字母t开始依次查找y，直到定位到y，此时已知y的后面是u，则查看表达式中是否有u，此处恰好有u，然后字符串u后面为e，FDA依次测试表达式，msen不符合要求被淘汰。nsen和nsem符合要求，DFA依次检测字符串，sen时只有nsen分支符合，匹配成功。</p>
-<p>两种引擎的特性区别和对引擎类别的测试可以参考这篇文章<a href="%5B(5%E6%9D%A1%E6%B6%88%E6%81%AF">正则引擎解析</a> 一次性搞懂JavaScript正则表达式之引擎_江木-CSDN博客_js 正则表达式引擎](<a target="_blank" rel="noopener" href="https://blog.csdn.net/chjj0904/article/details/99631182">https://blog.csdn.net/chjj0904/article/details/99631182</a>))</p>
-<h3 id="正则表达式的使用"><a href="#正则表达式的使用" class="headerlink" title="正则表达式的使用"></a>正则表达式的使用</h3><blockquote>
-<p>基本格式：&#x2F;正则表达式主题&#x2F;修饰符（可选）</p>
-</blockquote>
-<h6 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h6><ul>
-<li>i 执行大小写不敏感的匹配</li>
-<li>g 执行全局匹配（会查找所有匹配而不是在找到第一个匹配后停止）</li>
-<li>m 执行多行匹配</li>
-</ul>
-<p><em>reg是正则表达式名，str是字符串名</em></p>
-<h6 id="正则对象的方法"><a href="#正则对象的方法" class="headerlink" title="正则对象的方法"></a>正则对象的方法</h6><ul>
-<li><p>reg.test(str) 判断字符串中是否具有指定模式的子串，返回结果是一个布尔类型的值</p>
-</li>
-<li><p>reg.exec(str) 返回字符串中指定模式的子串，一次只能获取一个与之匹配的结果</p>
-</li>
-</ul>
-<h6 id="String对象的方法"><a href="#String对象的方法" class="headerlink" title="String对象的方法"></a>String对象的方法</h6><ul>
-<li>search(reg) 与indexOF类似，返回指定模式的子串在字符串中首次出现的位置</li>
-<li>match(reg) 以数组的形式返回指定模式的字符串，可以以数组形式<code>返回所有匹配</code>的结果(需要使用修饰符)</li>
-<li>replace(ref,’替换后字符’) 将指定模式的子串进行替换操作</li>
-<li>split(reg) 以制定模式分割字符串，返回结果为数组</li>
-</ul>
-<h6 id="正则表达式的符号"><a href="#正则表达式的符号" class="headerlink" title="正则表达式的符号"></a>正则表达式的符号</h6><p>可以直接参考百度百科，里面介绍的很清楚[百度百科](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/1700215">正则表达式_百度百科 (baidu.com)</a>)</p>
-<h3 id="实例分析"><a href="#实例分析" class="headerlink" title="实例分析"></a>实例分析</h3><blockquote>
-<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(?=.*[A-Za-z])(?=.*\d)<span class="selector-attr">[A-Za-z\d]</span>&#123;<span class="number">8</span>,<span class="number">16</span>&#125;$</span><br></pre></td></tr></table></figure>
+        <p>给定一个字符串 s 和一个字符串 t ，计算在 s 的子序列中 t 出现的个数。</p>
+<p>字符串的一个 子序列 是指，通过删除一些（也可以不删除）字符且不干扰剩余字符相对位置所组成的新字符串。（例如，”ACE” 是 “ABCDE” 的一个子序列，而 “AEC” 不是）</p>
+<p>题目数据保证答案符合 32 位带符号整数范围。</p>
+<p>示例 1：</p>
+<p>输入：s &#x3D; “rabbbit”, t &#x3D; “rabbit”<br>输出：3<br>解释：<br>如下图所示, 有 3 种可以从 s 中得到 “rabbit” 的方案。<br>rabbbit<br>rabbbit<br>rabbbit<br>示例 2：</p>
+<p>输入：s &#x3D; “babgbag”, t &#x3D; “bag”<br>输出：5<br>解释：<br>如下图所示, 有 5 种可以从 s 中得到 “bag” 的方案。<br>babgbag<br>babgbag<br>babgbag<br>babgbag<br>babgbag</p>
+<p>提示：</p>
+<p>0 &lt;&#x3D; s.length, t.length &lt;&#x3D; 1000<br>s 和 t 由英文字母组成</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">s</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">t</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> numDistinct = <span class="keyword">function</span>(<span class="params">s, t</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> dp = <span class="keyword">new</span> <span class="title class_">Array</span>(s.<span class="property">length</span> + <span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>).<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Array</span>(t.<span class="property">length</span> + <span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="comment">//空字符串是任何字符串的子串所以初始值是0</span></span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; s.<span class="property">length</span>;i++) &#123;</span><br><span class="line">        dp[i + <span class="number">1</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt;= i &amp;&amp; j &lt; t.<span class="property">length</span>;j++) &#123;</span><br><span class="line">            <span class="comment">//s[i]和t[j]匹配的情况</span></span><br><span class="line">            <span class="keyword">if</span>(s.<span class="title function_">charAt</span>(i) == t.<span class="title function_">charAt</span>(j)) &#123;</span><br><span class="line">                <span class="comment">//t[j]使用的情况加上t[j]不使用的情况</span></span><br><span class="line">                dp[i + <span class="number">1</span>][j + <span class="number">1</span>] = dp[i][j] + dp[i][j + <span class="number">1</span>];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//相当于只剩下了不适用的情况</span></span><br><span class="line">                dp[i + <span class="number">1</span>][j + <span class="number">1</span>] = dp[i][j + <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[s.<span class="property">length</span>][t.<span class="property">length</span>]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>&#x2F;&#x2F;8-16个字符，至少一个大写字母，一个小写字母和一个数字，不包括特殊字符</p>
-</blockquote>
-<p>^表示开头，$表示结尾。</p>
-<p>?&#x3D;是非获取匹配，正向肯定预查，*表示重复查找直到结尾，故第一个小括号里保证字符串里有一个大写字母和一个小写字母，第二个小括号确保里面一定有数字,第三个小括号表示接受大小写字母和数字，大括号里面是字符数的限制</p>
 
       
     </div>
@@ -389,8 +353,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2022/03/07/Vue%E4%B8%AD%E7%9A%84axios%E6%80%BB%E7%BB%93/" rel="next" title="Vue中的axios总结">
-                <i class="fa fa-chevron-left"></i> Vue中的axios总结
+              <a href="/2022/04/09/%E5%A4%A9%E9%99%85%E7%BA%BF%E9%97%AE%E9%A2%98/" rel="next" title="天际线问题">
+                <i class="fa fa-chevron-left"></i> 天际线问题
               </a>
             
           </div>
@@ -399,8 +363,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2022/03/08/element-ui/" rel="prev" title="element-ui">
-                element-ui <i class="fa fa-chevron-right"></i>
+              <a href="/2022/04/12/%E6%89%BE%E5%87%BA%E6%95%B0%E7%BB%84%E6%B8%B8%E6%88%8F%E7%9A%84%E8%B5%A2%E5%AE%B6%E2%80%94%E2%80%94%E8%B7%B3%E5%87%BA%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0/" rel="prev" title="找出数组游戏的赢家——跳出题目描述">
+                找出数组游戏的赢家——跳出题目描述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -453,17 +417,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -505,22 +460,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">正则表达式的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E5%BC%95%E6%93%8E"><span class="nav-number">2.</span> <span class="nav-text">两种引擎</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number"></span> <span class="nav-text">正则表达式的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">0.0.1.</span> <span class="nav-text">修饰符</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">0.0.2.</span> <span class="nav-text">正则对象的方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#String%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">0.0.3.</span> <span class="nav-text">String对象的方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="nav-number">0.0.4.</span> <span class="nav-text">正则表达式的符号</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number"></span> <span class="nav-text">实例分析</span></a></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
